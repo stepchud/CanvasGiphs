@@ -18,6 +18,11 @@
                                 <frame key="frameInset" minX="10" minY="391" width="300" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="down_arrow" id="EVJ-kJ-8tq">
+                                        <frame key="frameInset" minX="27" minY="5" width="246" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="happy" id="W0I-m8-jse">
                                         <frame key="frameInset" minX="27" minY="29" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,11 +62,6 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="eyE-Yr-4cr" appends="YES" id="Ko6-7J-etQ"/>
                                         </connections>
-                                    </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="down_arrow" id="EVJ-kJ-8tq">
-                                        <frame key="frameInset" minX="27" minY="5" width="246" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wink" id="b7Z-Mo-6q9">
                                         <frame key="frameInset" minX="27" minY="97" width="60" height="60"/>

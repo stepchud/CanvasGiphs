@@ -41,8 +41,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             print("Gesture started at: \(currentPoint)")
             startTrayPoint = trayView.center
         } else if panGestureRecognizer.state == .changed {
-            print("Gesture changed to: \(currentPoint)")
-            trayArrow.transform.rotated(by: 0)
+            if panGestureRecognizer.velocity(in: parentView).y > 0 {
+                print("Gesture changed to: closing")
+                self.trayArrow.transform.rotated(by: 0)
+            } else {
+                print("Gesture changed to: opening")
+                self.trayArrow.transform.rotated(by: CGFloat(M_PI))
+            }
             trayView.center = CGPoint(x: startTrayPoint.x, y: startTrayPoint.y + currentPoint.y)
         } else if panGestureRecognizer.state == .ended {
             let v = panGestureRecognizer.velocity(in: parentView)
@@ -50,14 +55,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             if v.y > 0 { // closed
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
                     self.trayView.center = self.trayClosedPosition
-                    self.trayArrow.transform.rotated(by: 0)
                 }, completion: { (finished) in
                         
                 })
             } else { // opened
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
                     self.trayView.center = self.trayOpenPosition
-                    self.trayArrow.transform.rotated(by: CGFloat(M_PI))
                 }, completion: { (finished) in
                         
                 })
